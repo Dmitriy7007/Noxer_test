@@ -1,0 +1,130 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  white-space: nowrap;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.button svg {
+  width: 16px;
+  height: 16px;
+  pointer-events: none;
+  flex-shrink: 0;
+}
+
+.button:disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.button:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--ring) 50%, transparent);
+}
+
+.button[aria-invalid='true'] {
+  border-color: var(--destructive);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--destructive) 20%, transparent);
+}
+
+.default {
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+}
+
+.default:hover {
+  background-color: color-mix(in srgb, var(--primary) 90%, transparent);
+}
+
+.destructive {
+  background-color: var(--destructive);
+  color: white;
+}
+
+.destructive:hover {
+  background-color: color-mix(in srgb, var(--destructive) 90%, transparent);
+}
+
+.outline {
+  background-color: var(--background);
+  border: 1px solid var(--input);
+  box-shadow: var(--shadow-xs);
+  color: var(--foreground);
+}
+
+.outline:hover {
+  background-color: var(--accent);
+  color: var(--accent-foreground);
+}
+
+.secondary {
+  background-color: var(--secondary);
+  color: var(--secondary-foreground);
+}
+
+.secondary:hover {
+  background-color: color-mix(in srgb, var(--secondary) 80%, transparent);
+}
+
+.ghost {
+  background: none;
+  color: var(--foreground);
+}
+
+.ghost:hover {
+  background-color: var(--accent);
+  color: var(--accent-foreground);
+}
+
+.link {
+  background: none;
+  color: var(--primary);
+  text-decoration: none;
+  text-underline-offset: 4px;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.defaultSize {
+  height: 36px;
+  padding: 8px 16px;
+}
+
+.sm {
+  height: 32px;
+  border-radius: 6px;
+  gap: 6px;
+  padding: 6px 12px;
+}
+
+.lg {
+  height: 40px;
+  border-radius: 6px;
+  padding: 8px 24px;
+}
+
+.icon {
+  width: 36px;
+  height: 36px;
+}
+
+.iconSm {
+  width: 32px;
+  height: 32px;
+}
+
+.iconLg {
+  width: 40px;
+  height: 40px;
+}

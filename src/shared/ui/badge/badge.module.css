@@ -1,0 +1,72 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  border-width: 1px;
+  border-style: solid;
+  padding: 2px 8px;
+  font-size: 12px;
+  font-weight: 500;
+  width: fit-content;
+  white-space: nowrap;
+  flex-shrink: 0;
+  overflow: hidden;
+  gap: 4px;
+  transition: color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.badge svg {
+  width: 12px;
+  height: 12px;
+  pointer-events: none;
+}
+
+.default {
+  border-color: transparent;
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+}
+
+.default:hover {
+  background-color: color-mix(in srgb, var(--primary) 90%, transparent);
+}
+
+.secondary {
+  border-color: transparent;
+  background-color: var(--secondary);
+  color: var(--secondary-foreground);
+}
+
+.secondary:hover {
+  background-color: color-mix(in srgb, var(--secondary) 90%, transparent);
+}
+
+.destructive {
+  border-color: transparent;
+  background-color: var(--destructive);
+  color: white;
+}
+
+.destructive:hover {
+  background-color: color-mix(in srgb, var(--destructive) 90%, transparent);
+}
+
+.outline {
+  color: var(--foreground);
+}
+
+.outline:hover {
+  background-color: var(--accent);
+  color: var(--accent-foreground);
+}
+
+.badge:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--ring) 50%, transparent);
+}
+
+.badge[aria-invalid='true'] {
+  border-color: var(--destructive);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--destructive) 20%, transparent);
+}
