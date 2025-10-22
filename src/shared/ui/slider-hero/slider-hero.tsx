@@ -37,7 +37,12 @@ export const SliderHero = ({ slides, options }: PropType) => {
         <div className='embla__container'>
           {slides.map((slide, index) => (
             <div className='embla__slide embla__slide_1' key={index}>
-              <img src={slide} alt='картинка' />
+              <img
+                src={slide}
+                alt='картинка'
+                style={{ overflow: 'hidden', borderRadius: '1rem' }}
+                width='100%'
+              />
             </div>
           ))}
         </div>
