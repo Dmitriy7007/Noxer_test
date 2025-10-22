@@ -2,6 +2,87 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 5px;
+  margin-top: 16px;
+}
+
+.cardImage {
+  max-height: 193px;
+  position: relative;
+}
+
+.cardBadge {
+  position: absolute;
+  left: 5px;
+}
+
+.cardBadge_0 {
+  top: 5px;
+}
+
+.cardBadge_1 {
+  top: 30px;
+}
+
+.cardBadge_2 {
+  top: 55px;
+}
+
+.orangeColor {
+  background-color: #ff6723 !important;
+}
+
+.yellowColor {
+  background-color: #ffca28 !important;
+}
+
+.greenColor {
+  background-color: #45b649 !important;
+}
+
+.redColor {
+  background-color: #ff0000 !important;
+}
+
+.blueColor {
+  background-color: #0000ff !important;
+}
+
+.like {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+}
+
+.price {
+  font-weight: 700;
+  font-size: 17px;
+  color: #292928;
+  margin-right: 5px;
+}
+
+.oldPrice {
+  font-weight: 500;
+  font-size: 11px;
+  text-decoration: line-through;
+  color: rgba(41, 41, 40, 0.3);
+  margin-right: 5px;
+}
+
+.discount {
+  font-weight: 600;
+  font-size: 11px;
+  color: #f24131;
+}
+
+.slider {
+  height: 193px;
+}
+
+.cardButton {
+  padding: 10px;
+  cursor: pointer;
+  width: 100%;
+  display: flex;
 }
 
 @media (max-width: 425px) {

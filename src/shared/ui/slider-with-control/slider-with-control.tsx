@@ -5,13 +5,15 @@ import Autoplay from 'embla-carousel-autoplay'
 import useEmblaCarousel from 'embla-carousel-react'
 import { useDotButton } from './useDotButton'
 import { DotButton } from './dot-button'
+import clsx from 'clsx'
 
 type PropType = {
-  slides: string[]
+  slides: string[] | []
   options?: EmblaOptionsType
+  className?: string
 }
 
-export const SliderHero = ({ slides, options }: PropType) => {
+export const SliderWithControl = ({ slides, options, className }: PropType) => {
   const [emblaRef, emblaApi] = useEmblaCarousel(options, [Autoplay()])
 
   const onNavButtonClick = useCallback((emblaApi: EmblaCarouselType) => {
@@ -32,7 +34,7 @@ export const SliderHero = ({ slides, options }: PropType) => {
   )
 
   return (
-    <section className='embla'>
+    <section className={clsx('embla', className)}>
       <div className='embla__viewport' ref={emblaRef}>
         <div className='embla__container'>
           {slides.map((slide, index) => (
@@ -40,8 +42,13 @@ export const SliderHero = ({ slides, options }: PropType) => {
               <img
                 src={slide}
                 alt='картинка'
-                style={{ overflow: 'hidden', borderRadius: '1rem' }}
+                style={{
+                  overflow: 'hidden',
+                  borderRadius: '15px',
+                  objectFit: 'cover',
+                }}
                 width='100%'
+                height='100%'
               />
             </div>
           ))}

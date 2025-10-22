@@ -4,7 +4,7 @@
   justify-content: center;
   gap: 8px;
   white-space: nowrap;
-  border-radius: 6px;
+  border-radius: 15px;
   font-size: 14px;
   font-weight: 500;
   transition: all 0.2s ease;
@@ -37,12 +37,12 @@
 }
 
 .default {
-  background-color: var(--primary);
-  color: var(--primary-foreground);
+  background-color: #f1f1f1;
+  color: #292928;
 }
 
 .default:hover {
-  background-color: color-mix(in srgb, var(--primary) 90%, transparent);
+  background-color: #dedbdb;
 }
 
 .destructive {

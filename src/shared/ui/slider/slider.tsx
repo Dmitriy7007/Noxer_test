@@ -2,7 +2,7 @@ import useEmblaCarousel from 'embla-carousel-react'
 import type { EmblaOptionsType } from 'embla-carousel'
 import type { Category } from '@/shared/type/types'
 
-export const SliderCard = ({
+export const Slider = ({
   slides,
   options,
 }: {
@@ -22,7 +22,7 @@ export const SliderCard = ({
             >
               <div className='embla__slide_category'>
                 <img
-                  src={slide?.Category_Image ?? '/category.webp'}
+                  src={slide?.Category_Image ?? ''}
                   alt='картинка'
                   width={114}
                   height={114}
