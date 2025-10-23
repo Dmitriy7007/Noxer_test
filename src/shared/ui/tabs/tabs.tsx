@@ -1,5 +1,5 @@
 import * as TabsPrimitive from '@radix-ui/react-tabs'
-import styles from './Tabs.module.css'
+import styles from './tabs.module.css'
 import type { ComponentProps } from 'react'
 import clsx from 'clsx'
 
