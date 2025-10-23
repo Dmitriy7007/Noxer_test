@@ -1,4 +1,4 @@
-import { FooterApp } from '@/features/footer-app/footer-app'
+import { FooterApp } from '@/widgets/footer-app/footer-app'
 import { QueryProvider } from './query-provider'
 
 function App() {

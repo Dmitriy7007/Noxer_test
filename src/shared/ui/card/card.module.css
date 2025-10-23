@@ -1,7 +1,6 @@
 .card {
   display: flex;
   flex-direction: column;
-  /* gap: 1.5rem; */
   background-color: var(--card);
   color: var(--card-foreground);
   border: 1px solid var(--border);
@@ -29,6 +28,7 @@
 .cardTitle {
   font-weight: 400;
   font-size: 14px;
+  font-family: 'Inter', sans-serif;
   line-height: 115%;
   color: #292928;
 }
@@ -36,6 +36,7 @@
 .cardDescription {
   color: var(--muted-foreground);
   font-size: 0.875rem;
+  font-family: 'Inter', sans-serif;
 }
 
 .cardAction {
@@ -45,14 +46,10 @@
   justify-self: end;
 }
 
-/* .cardContent {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-} */
-
 .cardFooter {
   display: flex;
   align-items: center;
+  font-family: 'Inter', sans-serif;
 }
 
 .cardFooter.hasBorderTop {

@@ -7,6 +7,11 @@ import { Slider } from '@/shared/ui/slider/slider'
 import { SliderWithControl } from '@/shared/ui/slider-with-control/slider-with-control'
 import type { EmblaOptionsType } from 'embla-carousel'
 import { ErrorBoundary } from '../error-boundary/error-boundary'
+import styles from './home.module.css'
+import { Badge } from '@/shared/ui/badge/badge'
+import tg from '@/shared/assets/svg/tg.svg'
+import { MenuNavigation } from '@/features/menu-navigation/menu-navigation'
+import { SearchInput } from '@/features/search/search'
 
 export const Home = () => {
   const { data } = useFilteredProductsQuery({ per_page: 15, page: 1 })
@@ -22,9 +27,18 @@ export const Home = () => {
 
   return (
     <ErrorBoundary fallback={<p>Что-то пошло не так...</p>}>
+      <MenuNavigation />
+      <SearchInput />
       <SliderWithControl slides={SLIDES_HERO} options={OPTIONS_1} />
       <Slider slides={category ?? []} options={OPTIONS_2} />
       <ProductsList products={data?.products ?? []} />
+      <div className={styles.info}>
+        <div className={styles.text}>Разработано на платформе Noxer</div>
+        <Badge className={styles.badge}>
+          <img src={tg} alt='tg' />
+          noxerai_bot
+        </Badge>
+      </div>
     </ErrorBoundary>
   )
 }

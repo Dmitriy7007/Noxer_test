@@ -8,8 +8,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: 2.25rem;
-  width: fit-content;
+  height: 46px;
   padding: 3px;
   border-radius: 0.5rem;
   background-color: var(--muted);

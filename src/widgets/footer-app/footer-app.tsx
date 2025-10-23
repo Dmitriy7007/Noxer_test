@@ -1,5 +1,3 @@
-import { Badge } from '@/shared/ui/badge/badge'
-import tg from '@/shared/assets/svg/tg.svg'
 import styles from './footer-app.module.css'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/shared/ui/tabs/tabs'
 import home from '@/shared/assets/svg/home.svg'
@@ -12,11 +10,6 @@ import { Home } from '@/pages/home/home'
 export const FooterApp = () => {
   return (
     <div className={styles.footer}>
-      <div className={styles.text}>Разработано на платформе Noxer</div>
-      <Badge className={styles.badge}>
-        <img src={tg} alt='tg' />
-        noxerai_bot
-      </Badge>
       <Tabs defaultValue='home'>
         <TabsList className={styles.tabs}>
           <TabsTrigger value='home'>
@@ -39,7 +32,7 @@ export const FooterApp = () => {
           <Home />
         </TabsContent>
         <TabsContent value='catalog'>
-          <div>catalog</div>
+          <div className='content'>catalog</div>
         </TabsContent>
         <TabsContent value='favorite'>
           <div>favorite</div>

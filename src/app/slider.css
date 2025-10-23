@@ -28,7 +28,7 @@
   height: 100%;
 }
 .embla__slide_category {
-  font-family: var(--font-family);
+  font-family: Inter, sans-serif;
   font-weight: 500;
   font-size: 13px;
   line-height: 110%;
