@@ -7,7 +7,6 @@ import { Slider } from '@/shared/ui/slider/slider'
 import { SliderWithControl } from '@/shared/ui/slider-with-control/slider-with-control'
 import type { EmblaOptionsType } from 'embla-carousel'
 import { ErrorBoundary } from '../error-boundary/error-boundary'
-import { FooterApp } from '@/features/footer-app/footer-app'
 
 export const Home = () => {
   const { data } = useFilteredProductsQuery({ per_page: 15, page: 1 })
@@ -26,7 +25,6 @@ export const Home = () => {
       <SliderWithControl slides={SLIDES_HERO} options={OPTIONS_1} />
       <Slider slides={category ?? []} options={OPTIONS_2} />
       <ProductsList products={data?.products ?? []} />
-      <FooterApp />
     </ErrorBoundary>
   )
 }

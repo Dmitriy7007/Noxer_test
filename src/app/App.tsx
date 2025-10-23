@@ -1,10 +1,10 @@
+import { FooterApp } from '@/features/footer-app/footer-app'
 import { QueryProvider } from './query-provider'
-import { Home } from '@/pages/home/home'
 
 function App() {
   return (
     <QueryProvider>
-      <Home />
+      <FooterApp />
     </QueryProvider>
   )
 }

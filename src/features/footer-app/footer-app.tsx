@@ -1,14 +1,56 @@
 import { Badge } from '@/shared/ui/badge/badge'
 import tg from '@/shared/assets/svg/tg.svg'
+import styles from './footer-app.module.css'
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/shared/ui/tabs/tabs'
+import home from '@/shared/assets/svg/home.svg'
+import catalog from '@/shared/assets/svg/catalog.svg'
+import like from '@/shared/assets/svg/like.svg'
+import cart from '@/shared/assets/svg/cart.svg'
+import account from '@/shared/assets/svg/account.svg'
+import { Home } from '@/pages/home/home'
 
 export const FooterApp = () => {
   return (
-    <>
-      <div>Разработано на платформе Noxer</div>
-      <Badge>
+    <div className={styles.footer}>
+      <div className={styles.text}>Разработано на платформе Noxer</div>
+      <Badge className={styles.badge}>
         <img src={tg} alt='tg' />
         noxerai_bot
       </Badge>
-    </>
+      <Tabs defaultValue='home'>
+        <TabsList className={styles.tabs}>
+          <TabsTrigger value='home'>
+            <img src={home} alt='home' />
+          </TabsTrigger>
+          <TabsTrigger value='catalog'>
+            <img src={catalog} alt='catalog' />
+          </TabsTrigger>
+          <TabsTrigger value='favorite'>
+            <img src={like} alt='favorite' />
+          </TabsTrigger>
+          <TabsTrigger value='cart'>
+            <img src={cart} alt='cart' />
+          </TabsTrigger>
+          <TabsTrigger value='account'>
+            <img src={account} alt='account' />
+          </TabsTrigger>
+        </TabsList>
+        <TabsContent value='home'>
+          <Home />
+        </TabsContent>
+        <TabsContent value='catalog'>
+          <div>catalog</div>
+        </TabsContent>
+        <TabsContent value='favorite'>
+          <div>favorite</div>
+        </TabsContent>
+        <TabsContent value='cart'>
+          <div>cart</div>
+        </TabsContent>
+        <TabsContent value='account'>
+          <div>account</div>
+        </TabsContent>
+      </Tabs>
+    </div>
   )
 }
