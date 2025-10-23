@@ -1,10 +1,5 @@
 import type { Pagination, Product } from '@/shared/type/types'
 
-export interface ProductsFilterRequest {
-  per_page?: number
-  page?: number
-}
-
 export interface ProductsFilterResponse {
   products: Product[]
   pagination: Pagination

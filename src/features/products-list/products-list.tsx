@@ -16,8 +16,6 @@ import like from '@/shared/assets/svg/like.svg'
 import { Button } from '@/shared/ui/button/button'
 
 export const ProductsList = ({ products }: { products: Product[] }) => {
-  console.log(products)
-
   return (
     <div className={styles.productsList}>
       {products.map(product => {
