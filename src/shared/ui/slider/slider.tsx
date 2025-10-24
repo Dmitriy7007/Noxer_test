@@ -16,8 +16,6 @@ export const Slider = ({ slides, options }: { slides: Category[]; options: Embla
                 <img
                   src={slide?.Category_Image ?? ''}
                   alt='картинка'
-                  width={114}
-                  height={114}
                   className='embla__slide_image'
                 />
                 <p className='embla__slide_text'>{slide.Category_Name}</p>

@@ -7,12 +7,11 @@
 }
 
 .card {
-  width: 100%; /* занимает всю ширину колонки */
-  max-width: none; /* убираем ограничение */
+  width: 100%;
+  max-width: none;
 }
 
 .cardImage {
-  /* max-height: 193px; */
   position: relative;
 }
 
@@ -96,21 +95,5 @@
     grid-template-columns: repeat(2, 1fr);
     max-width: 425px;
     gap: 5px;
-  }
-
-  .cardImage {
-    max-height: 210px;
-    width: 100%;
-  }
-
-  .slider {
-    height: 210px;
-  }
-
-  .card {
-    width: 100%;
-    max-width: 210px; /* убрали фиксированное 210px */
-    display: flex;
-    flex-direction: column;
   }
 }

@@ -22,7 +22,7 @@
   width: 100%;
   font-size: 15px;
   height: 39px;
-  border-radius: 30px;
+  border-radius: 30px !important;
 }
 
 .dropdown {
