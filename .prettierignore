@@ -1,0 +1,8 @@
+/build
+/dist
+node_modules
+/.react-router
+.idea
+*.html
+*.mjs
+

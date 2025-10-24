@@ -1,11 +1,12 @@
-import styles from './footer-app.module.css'
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/shared/ui/tabs/tabs'
-import home from '@/shared/assets/svg/home.svg'
-import catalog from '@/shared/assets/svg/catalog.svg'
-import like from '@/shared/assets/svg/like.svg'
-import cart from '@/shared/assets/svg/cart.svg'
-import account from '@/shared/assets/svg/account.svg'
-import { Home } from '@/pages/home/home'
+import styles from './footer-app.module.css';
+
+import { Home } from '@/pages/home/home';
+import account from '@/shared/assets/svg/account.svg';
+import cart from '@/shared/assets/svg/cart.svg';
+import catalog from '@/shared/assets/svg/catalog.svg';
+import home from '@/shared/assets/svg/home.svg';
+import like from '@/shared/assets/svg/like.svg';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/shared/ui/tabs/tabs';
 
 export const FooterApp = () => {
   return (
@@ -45,5 +46,5 @@ export const FooterApp = () => {
         </TabsContent>
       </Tabs>
     </div>
-  )
-}
+  );
+};

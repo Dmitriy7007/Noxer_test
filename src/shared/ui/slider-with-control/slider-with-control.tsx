@@ -1,37 +1,32 @@
-import { useCallback } from 'react'
-import { type EmblaOptionsType, type EmblaCarouselType } from 'embla-carousel'
+import clsx from 'clsx';
+import { type EmblaOptionsType, type EmblaCarouselType } from 'embla-carousel';
+import Autoplay from 'embla-carousel-autoplay';
+import useEmblaCarousel from 'embla-carousel-react';
+import { useCallback } from 'react';
 
-import Autoplay from 'embla-carousel-autoplay'
-import useEmblaCarousel from 'embla-carousel-react'
-import { useDotButton } from './useDotButton'
-import { DotButton } from './dot-button'
-import clsx from 'clsx'
+import { DotButton } from './dot-button';
+import { useDotButton } from './useDotButton';
 
 type PropType = {
-  slides: string[] | []
-  options?: EmblaOptionsType
-  className?: string
-}
+  slides: string[] | [];
+  options?: EmblaOptionsType;
+  className?: string;
+};
 
 export const SliderWithControl = ({ slides, options, className }: PropType) => {
-  const [emblaRef, emblaApi] = useEmblaCarousel(options, [Autoplay()])
+  const [emblaRef, emblaApi] = useEmblaCarousel(options, [Autoplay()]);
 
   const onNavButtonClick = useCallback((emblaApi: EmblaCarouselType) => {
-    const autoplay = emblaApi?.plugins()?.autoplay
-    if (!autoplay) return
+    const autoplay = emblaApi?.plugins()?.autoplay;
+    if (!autoplay) return;
 
     const resetOrStop =
-      autoplay.options.stopOnInteraction === false
-        ? autoplay.reset
-        : autoplay.stop
+      autoplay.options.stopOnInteraction === false ? autoplay.reset : autoplay.stop;
 
-    resetOrStop()
-  }, [])
+    resetOrStop();
+  }, []);
 
-  const { selectedIndex, scrollSnaps, onDotButtonClick } = useDotButton(
-    emblaApi,
-    onNavButtonClick
-  )
+  const { selectedIndex, scrollSnaps, onDotButtonClick } = useDotButton(emblaApi, onNavButtonClick);
 
   return (
     <section className={clsx('embla', className)}>
@@ -62,12 +57,12 @@ export const SliderWithControl = ({ slides, options, className }: PropType) => {
               key={index}
               onClick={() => onDotButtonClick(index)}
               className={'embla__dot'.concat(
-                index === selectedIndex ? ' embla__dot--selected' : ''
+                index === selectedIndex ? ' embla__dot--selected' : '',
               )}
             />
           ))}
         </div>
       </div>
     </section>
-  )
-}
+  );
+};

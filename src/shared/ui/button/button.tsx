@@ -1,22 +1,17 @@
-import { Slot } from '@radix-ui/react-slot'
-import styles from './button.module.css'
-import type { ComponentProps } from 'react'
-import clsx from 'clsx'
+import { Slot } from '@radix-ui/react-slot';
+import clsx from 'clsx';
+import type { ComponentProps } from 'react';
 
-type Variant =
-  | 'default'
-  | 'destructive'
-  | 'outline'
-  | 'secondary'
-  | 'ghost'
-  | 'link'
+import styles from './button.module.css';
 
-type Size = 'default' | 'sm' | 'lg' | 'icon' | 'icon-sm' | 'icon-lg'
+type Variant = 'default' | 'destructive' | 'outline' | 'secondary' | 'ghost' | 'link';
+
+type Size = 'default' | 'sm' | 'lg' | 'icon' | 'icon-sm' | 'icon-lg';
 
 interface ButtonProps extends ComponentProps<'button'> {
-  variant?: Variant
-  size?: Size
-  asChild?: boolean
+  variant?: Variant;
+  size?: Size;
+  asChild?: boolean;
 }
 
 export function Button({
@@ -26,7 +21,7 @@ export function Button({
   asChild = false,
   ...props
 }: ButtonProps) {
-  const Comp = asChild ? Slot : 'button'
+  const Comp = asChild ? Slot : 'button';
 
   const sizeClassMap: Record<Size, string> = {
     default: styles.defaultSize,
@@ -35,18 +30,13 @@ export function Button({
     icon: styles.icon,
     'icon-sm': styles.iconSm,
     'icon-lg': styles.iconLg,
-  }
+  };
 
   return (
     <Comp
       data-slot='button'
-      className={clsx(
-        styles.button,
-        styles[variant],
-        sizeClassMap[size],
-        className
-      )}
+      className={clsx(styles.button, styles[variant], sizeClassMap[size], className)}
       {...props}
     />
-  )
+  );
 }

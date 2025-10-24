@@ -1,25 +1,17 @@
-import useEmblaCarousel from 'embla-carousel-react'
-import type { EmblaOptionsType } from 'embla-carousel'
-import type { Category } from '@/shared/type/types'
+import type { EmblaOptionsType } from 'embla-carousel';
+import useEmblaCarousel from 'embla-carousel-react';
 
-export const Slider = ({
-  slides,
-  options,
-}: {
-  slides: Category[]
-  options: EmblaOptionsType
-}) => {
-  const [emblaRef] = useEmblaCarousel(options)
+import type { Category } from '@/shared/type/types';
+
+export const Slider = ({ slides, options }: { slides: Category[]; options: EmblaOptionsType }) => {
+  const [emblaRef] = useEmblaCarousel(options);
 
   return (
     <section className='embla'>
       <div className='embla__viewport' ref={emblaRef}>
         <div className='embla__container'>
-          {slides.map(slide => (
-            <div
-              className='embla__slide embla__slide_2'
-              key={slide.Category_ID}
-            >
+          {slides.map((slide) => (
+            <div className='embla__slide embla__slide_2' key={slide.Category_ID}>
               <div className='embla__slide_category'>
                 <img
                   src={slide?.Category_Image ?? ''}
@@ -35,5 +27,5 @@ export const Slider = ({
         </div>
       </div>
     </section>
-  )
-}
+  );
+};

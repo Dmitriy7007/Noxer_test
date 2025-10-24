@@ -1,8 +1,10 @@
-import { Badge } from '@/shared/ui/badge/badge'
-import { Button } from '@/shared/ui/button/button'
-import { ChevronDown, Ellipsis, X } from 'lucide-react'
-import styles from './menu-navigation.module.css'
-import tg1 from '@/shared/assets/svg/tg1.svg'
+import { ChevronDown, Ellipsis, X } from 'lucide-react';
+
+import styles from './menu-navigation.module.css';
+
+import tg1 from '@/shared/assets/svg/tg1.svg';
+import { Badge } from '@/shared/ui/badge/badge';
+import { Button } from '@/shared/ui/button/button';
 
 export const MenuNavigation = () => {
   return (
@@ -11,7 +13,7 @@ export const MenuNavigation = () => {
         <X />
         Закрыть
       </Button>
-      <Badge className={styles.badge}>
+      <Badge className={styles.badge} variant='outline'>
         <img src={tg1} alt='tg' />
         наш tg-канал
       </Badge>
@@ -20,5 +22,5 @@ export const MenuNavigation = () => {
         <Ellipsis />
       </Button>
     </div>
-  )
-}
+  );
+};

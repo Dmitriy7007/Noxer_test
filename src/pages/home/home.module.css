@@ -8,17 +8,17 @@
 }
 
 .badge {
-  background-color: rgba(139, 139, 139, 0.1);
+  background-color: rgba(139, 139, 139, 0.1) !important;
   border-radius: 20px;
   padding: 4px 7px 5px 5px;
   font-weight: 500;
   font-size: 11px;
   line-height: 105%;
-  color: #8b8b8b;
+  color: #8b8b8b !important;
 }
 
 .badge:hover {
-  background-color: rgba(139, 139, 139, 0.1);
+  background-color: rgba(139, 139, 139, 0.1) !important;
 }
 
 .text {

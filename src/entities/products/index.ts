@@ -1,4 +1,1 @@
-export {
-  useManageProductsQuery,
-  useFilteredProductsQuery,
-} from './api/useManageProductsQuery'
+export { useManageProductsQuery, useFilteredProductsQuery } from './api/useManageProductsQuery';

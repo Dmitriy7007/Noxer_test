@@ -1,4 +1,11 @@
-import type { Product } from '@/shared/type/types'
+import clsx from 'clsx';
+
+import styles from './products-list.module.css';
+
+import like from '@/shared/assets/svg/like.svg';
+import type { Product } from '@/shared/type/types';
+import { Badge } from '@/shared/ui/badge/badge';
+import { Button } from '@/shared/ui/button/button';
 import {
   Card,
   CardContent,
@@ -6,23 +13,16 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from '@/shared/ui/card/card'
-
-import styles from './products-list.module.css'
-import { SliderWithControl } from '@/shared/ui/slider-with-control/slider-with-control'
-import { Badge } from '@/shared/ui/badge/badge'
-import clsx from 'clsx'
-import like from '@/shared/assets/svg/like.svg'
-import { Button } from '@/shared/ui/button/button'
+} from '@/shared/ui/card/card';
+import { SliderWithControl } from '@/shared/ui/slider-with-control/slider-with-control';
 
 export const ProductsList = ({ products }: { products: Product[] }) => {
   return (
     <div className={styles.productsList}>
-      {products.map(product => {
-        const slides =
-          product.images && product.images.map(image => image?.Image_URL ?? '')
-        console.log(slides)
-        const badge = product.marks && product.marks.map(mark => mark.Mark_Name)
+      {products.map((product) => {
+        const slides = product.images && product.images.map((image) => image?.Image_URL ?? '');
+        console.log(slides);
+        const badge = product.marks && product.marks.map((mark) => mark.Mark_Name);
 
         return (
           <Card key={product.id}>
@@ -43,19 +43,12 @@ export const ProductsList = ({ products }: { products: Product[] }) => {
                       mark == 'new' && styles.greenColor,
                       mark == 'sale' && styles.yellowColor,
                       mark == 'hot' && styles.redColor,
-                      mark == 'предзаказ' && styles.blueColor
-                    )}
-                  >
+                      mark == 'предзаказ' && styles.blueColor,
+                    )}>
                     {mark}
                   </Badge>
                 ))}
-              <img
-                src={like}
-                alt='иконка'
-                width={17}
-                height={15}
-                className={styles.like}
-              />
+              <img src={like} alt='иконка' width={17} height={15} className={styles.like} />
             </CardContent>
             <CardHeader>
               <CardDescription>
@@ -74,8 +67,8 @@ export const ProductsList = ({ products }: { products: Product[] }) => {
               <Button className={styles.cardButton}>Выбрать</Button>
             </CardFooter>
           </Card>
-        )
+        );
       })}
     </div>
-  )
-}
+  );
+};
