@@ -25,7 +25,7 @@ export const ProductsList = ({ products }: { products: Product[] }) => {
         const badge = product.marks && product.marks.map((mark) => mark.Mark_Name);
 
         return (
-          <Card key={product.id}>
+          <Card key={product.id} className={styles.card}>
             <CardContent className={styles.cardImage}>
               <SliderWithControl
                 slides={slides.length ? slides : ['./category.webp']}
@@ -50,7 +50,7 @@ export const ProductsList = ({ products }: { products: Product[] }) => {
                 ))}
               <img src={like} alt='иконка' width={17} height={15} className={styles.like} />
             </CardContent>
-            <CardHeader>
+            <CardHeader className={styles.cardHeader}>
               <CardDescription>
                 <span className={styles.price}>{product.price} ₽</span>
                 <span className={styles.oldPrice}>{product.old_price}</span>

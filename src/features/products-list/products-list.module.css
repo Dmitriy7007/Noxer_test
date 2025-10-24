@@ -1,12 +1,18 @@
 .productsList {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 5px;
-  margin-top: 16px;
+  width: 100%;
+  max-width: 600px;
+}
+
+.card {
+  width: 100%; /* занимает всю ширину колонки */
+  max-width: none; /* убираем ограничение */
 }
 
 .cardImage {
-  max-height: 193px;
+  /* max-height: 193px; */
   position: relative;
 }
 
@@ -88,5 +94,23 @@
 @media (max-width: 425px) {
   .productsList {
     grid-template-columns: repeat(2, 1fr);
+    max-width: 425px;
+    gap: 5px;
+  }
+
+  .cardImage {
+    max-height: 210px;
+    width: 100%;
+  }
+
+  .slider {
+    height: 210px;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 210px; /* убрали фиксированное 210px */
+    display: flex;
+    flex-direction: column;
   }
 }
