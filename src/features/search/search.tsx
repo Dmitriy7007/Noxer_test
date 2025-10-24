@@ -58,6 +58,7 @@ export const SearchInput = ({ searchTerm, setSearchTerm, resetPage }: SearchInpu
           <h3 className={styles.dropdownHeader}>Часто ищут</h3>
           {popularSearches.slice(0, 10).map((item) => (
             <div key={item} className={styles.dropdownItem} onMouseDown={() => handleSelect(item)}>
+              <Search width={10} height={10} style={{ marginRight: '5px' }} />
               {item}
             </div>
           ))}
